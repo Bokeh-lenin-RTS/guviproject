@@ -1,8 +1,12 @@
-version: '3.9'
-
+version: "3.0"
 services:
   nginx:
-    image: web:v1
+    image: app:v1
     ports:
-      - "3000:3000"
+      - "80:80"
     container_name: test1
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    ports:
+      - "8080:8080"
